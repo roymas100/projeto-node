@@ -11,7 +11,7 @@ Tabela de conteúdos
 <!--te-->
 
 <a id="ancora1"></a>
-## Pre-requisitos
+# Pre-requisitos
 
 Antes de começar, você vai precisar ter instalado em sua máquina as seguintes ferramentas:
 [Git](https://git-scm.com), [Node.js](https://nodejs.org/en/), [yarn](https://classic.yarnpkg.com/en/docs/install/#windows-stable). 
@@ -19,9 +19,9 @@ Além disto é bom ter um editor para trabalhar com o código como [VSCode](http
 
 
 <a id="ancora2"></a>
-## Configurando estrutura / express, typescript
+# Configurando estrutura / express, typescript
 
-### Passo 1 - Baixar dependencias
+## Passo 1 - Baixar dependencias
 
 ```
 yarn add express
@@ -33,7 +33,7 @@ yarn add typescript -D
 yarn tsc --init
 ```
 
-### Passo 2 - Configurar 'tsconfig.json'
+## Passo 2 - Configurar 'tsconfig.json'
 
 #### Em 'tsconfig.json', descomente as duas linhas 'outDir' e 'rootDir', e deixe como está abaixo:
 
