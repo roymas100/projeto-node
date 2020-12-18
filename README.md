@@ -217,4 +217,64 @@ dist
 }
 ```
 
-### Configurando Prettier
+<a id="ancora3.3"></a>
+## Configurando Prettier
+
+#### Instale as dependencias do prettier com eslint
+
+```
+yarn add prettier eslint-config-prettier eslint-plugin-prettier -D
+```
+
+#### Modifique o arquivo ```.eslintconfig```, na sessão ```extends```
+
+```
+"prettier/@typescript-eslint",
+"plugin:prettier/recommended"
+```
+
+#### E em ```plugins```
+
+```
+"prettier"
+```
+
+#### Em ```rules```
+
+```
+"prettier/prettier": "error"
+```
+
+#### Exemplo:
+
+```
+{
+	...
+  "extends": [
+		...
+    "prettier/@typescript-eslint",
+    "plugin:prettier/recommended"
+  ],
+  ...
+  "plugins": [
+    ...
+    "prettier"
+  ],
+  "rules": {
+    ...
+		"prettier/prettier": "error"
+  },
+  ...
+}
+```
+
+#### Crie um ```prettier.config.js``` e adicione:
+
+```
+module.exports = {
+  singleQuote: true,
+  trailingComma: 'all',
+	arrowParens: 'avoid',
+}
+```
+
