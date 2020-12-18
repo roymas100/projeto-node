@@ -11,7 +11,8 @@ Tabela de conteúdos
       * [Passo 2 - Configurar 'tsconfig.json'](#ancora2.2)
       * [Passo 3 - Configurar scripts no 'package.json'](#ancora2.3)
   * [Configurando EditorConfig, ESlint e Prettier](#ancora3)
-
+      * [Configurando EditorConfig](#ancora3.1)
+      * [Configurando ESLint](#ancora3.2)
 <!--te-->
 
 <a id="ancora1"></a>
@@ -82,11 +83,13 @@ yarn add ts-node-dev -D
 <a id="ancora3"></a>
 # Configurando EditorConfig, ESlint e Prettier
 
+Tutorial do Notion - Imagens também de sua autoria.
 * [EditorConfig, ESlint e Prettier](https://www.notion.so/Padr-es-de-projeto-com-ESLint-Prettier-e-EditorConfig-0b57b47a24724c859c0cf226aa0cc3a7)
 
-## Configurando Prettier
+<a id="ancora3.1"></a>
+## Configurando EditorConfig
 
-#### Procure nas extensões do VSCode, a extensão da imagem abaixo:
+#### Procure nas extensões do VSCode, a extensão ```EditorConfig for VS Code```, assim como a imagem abaixo:
 
 ![alt text](https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F2184e361-42b6-4019-9d21-0ac456021f02%2Fi1.png?table=block&id=ad3f8cf0-d41f-4f2a-a46f-ddbb1b16c603&width=2750&userId=&cache=v2)
 
@@ -96,7 +99,7 @@ yarn add ts-node-dev -D
 
 #### Modifique o arquivo gerado, 'editorconfig', como está abaixo:
 
-```
+```bash
 root = true
 
 [*]
@@ -108,4 +111,110 @@ insert_final_newline = true
 end_of_line = lf
 ```
 
+<a id="ancora3.2"></a>
 ## Configurando ESLint
+
+#### Baixe a dependencia eslint
+
+```bash
+yarn add eslint -D
+```
+
+#### Inicialize a configuração
+
+```bash
+yarn eslint --init
+```
+
+1. To check syntax, find problems and enforce code style
+2. Javascript modules (import/export)
+3. None of these
+4. Yes (for TypeScript)
+5. Node
+6. Use a popular style guide
+7. Airbnb
+8. JSON
+9. No (já que usamos yarn)
+
+#### Adiocione as depedencias manualmente já que não é instalado pelo npm
+
+```bash
+yarn add @typescript-eslint/eslint-plugin@latest eslint-config-airbnb-base@latest eslint-plugin-import@^2.21.2 @typescript-eslint/parser@latest -D
+```
+
+#### Crie um arquivo na raiz do projeto ```.eslintignore````
+
+```bash
+/*.js
+node_modules
+dist
+```
+
+#### No ```.eslintrc.json```:
+
+##### Adicione em ```extends```
+
+```
+"plugin:@typescript-eslint/recommended"
+```
+
+##### Adicione depois de ```rules```
+
+```
+"settings": {
+	    "import/resolver": {
+	      "typescript": {}
+	    }
+	  }
+```
+
+##### Adicione em ```rules```
+
+```
+"import/extensions": [
+	      "error",
+	      "ignorePackages",
+	      {
+	        "ts": "never"
+	      }
+	    ]
+```
+
+##### Exemplo:
+
+```
+{
+    "env": {
+        "es2020": true,
+        "node": true
+    },
+    "extends": [
+        "airbnb-base",
+				"plugin:@typescript-eslint/recommended"
+    ],
+    "parser": "@typescript-eslint/parser",
+    "parserOptions": {
+        "ecmaVersion": 2018,
+        "sourceType": "module"
+    },
+    "plugins": [
+        "@typescript-eslint"
+    ],
+    "rules": {
+	   	"import/extensions": [
+	      "error",
+	      "ignorePackages",
+	      {
+	        "ts": "never"
+	      }
+	    ]
+	  },
+	  "settings": {
+	    "import/resolver": {
+	      "typescript": {}
+	    }
+	  }
+}
+```
+
+### Configurando Prettier
