@@ -83,3 +83,29 @@ yarn add ts-node-dev -D
 # Configurando EditorConfig, ESlint e Prettier
 
 * [EditorConfig, ESlint e Prettier](https://www.notion.so/Padr-es-de-projeto-com-ESLint-Prettier-e-EditorConfig-0b57b47a24724c859c0cf226aa0cc3a7)
+
+## Configurando Prettier
+
+#### Procure nas extensões do VSCode, a extensão da imagem abaixo:
+
+![alt text](https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F2184e361-42b6-4019-9d21-0ac456021f02%2Fi1.png?table=block&id=ad3f8cf0-d41f-4f2a-a46f-ddbb1b16c603&width=2750&userId=&cache=v2)
+
+#### Depois de instalada, ao clicar com o botão direito sobre o explorador de arquivos do projeto vamos selecionar a opção ```Generate .editorconfig```
+
+![alt text](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/633a1f68-af6a-4eaf-849e-66f6cc1acae7/editorConfig.gif?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAT73L2G45O3KS52Y5%2F20201218%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20201218T120758Z&X-Amz-Expires=86400&X-Amz-Signature=b547492f1347bf173328cd2a51c299d7ce9e297475648a398a31e9871d1ab524&X-Amz-SignedHeaders=host)
+
+#### Modifique o arquivo gerado, 'editorconfig', como está abaixo:
+
+```
+root = true
+
+[*]
+indent_style = space
+indent_size = 2
+charset = utf-8
+trim_trailing_whitespace = true
+insert_final_newline = true
+end_of_line = lf
+```
+
+## Configurando ESLint
