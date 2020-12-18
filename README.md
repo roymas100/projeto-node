@@ -5,8 +5,12 @@
 Tabela de conteúdos
 ====================
 <!--ts-->
-   * [Pre-requisitos](#ancora1)
-   * [Configurando estrutura](#ancora2)
+  * [Pre-requisitos](#ancora1)
+  * [Configurando estrutura](#ancora2)
+      * [Passo 1 - Baixar dependencias](#ancora2.1)
+      * [Passo 2 - Configurar 'tsconfig.json'](#ancora2.2)
+      * [Passo 3 - Configurar scripts no 'package.json'](#ancora2.3)
+  * [Configurando EditorConfig, ESlint e Prettier](#ancora3)
 
 <!--te-->
 
@@ -27,6 +31,7 @@ Além disto é bom ter um editor para trabalhar com o código como:
 <a id="ancora2"></a>
 # Configurando estrutura / express, typescript
 
+<a id="ancora2.1"></a>
 ## Passo 1 - Baixar dependencias
 
 ```
@@ -39,8 +44,10 @@ yarn add typescript @types/express -D
 yarn tsc --init
 ```
 
+<a id="ancora2.1Obs"></a>
 ###### Obs.: Quando tiver alguma dependencia que não está sendo lida, tente " @type/xxxx -D ".
 
+<a id="ancora2.2"></a>
 ## Passo 2 - Configurar 'tsconfig.json'
 
 #### Em 'tsconfig.json', descomente as duas linhas 'outDir' e 'rootDir', e deixe como está abaixo:
@@ -50,6 +57,7 @@ yarn tsc --init
     "rootDir": "./src",
 ```
 
+<a id="ancora2.3"></a>
 ## Passo 3 - Configurar scripts no 'package.json'
 
 ### Instale a dependencia como desenvolvimento:
@@ -71,6 +79,7 @@ yarn add ts-node-dev -D
 }
 ```
 
-## Configurando EditorConfig, ESlint e Prettier
+<a id="ancora3"></a>
+# Configurando EditorConfig, ESlint e Prettier
 
 * [EditorConfig, ESlint e Prettier](https://www.notion.so/Padr-es-de-projeto-com-ESLint-Prettier-e-EditorConfig-0b57b47a24724c859c0cf226aa0cc3a7)
