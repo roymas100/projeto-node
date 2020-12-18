@@ -13,7 +13,7 @@ Tabela de conteúdos
   * [Configurando EditorConfig, ESlint e Prettier](#ancora3)
       * [Configurando EditorConfig](#ancora3.1)
       * [Configurando ESLint](#ancora3.2)
-      * [Configurando ESLint](#ancora3.3)
+      * [Configurando Prettier](#ancora3.3)
 <!--te-->
 
 <a id="ancora1"></a>
