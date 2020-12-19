@@ -14,6 +14,7 @@ Tabela de conteúdos
       * [Configurando EditorConfig](#ancora3.1)
       * [Configurando ESLint](#ancora3.2)
       * [Configurando Prettier](#ancora3.3)
+  * [VSCode Debug Configuration](#ancora4)
 <!--te-->
 
 <a id="ancora1"></a>
@@ -75,7 +76,7 @@ yarn add ts-node-dev -D
   ...
   "scripts": {
     "build": "tsc",
-    "dev:server": "ts-node-dev --transpile-only --ignore-watch node_modules src/server.ts"
+    "dev:server": "ts-node-dev --inspect --transpile-only --ignore-watch node_modules src/server.ts"
   },
   ...
 }
@@ -279,3 +280,33 @@ module.exports = {
 }
 ```
 
+<a id="ancora4"></a>
+# Configurando Debug do VSCode
+
+#### Aperte ```CTRL + SHIFT + D``` no VSCode.
+
+#### Clique ona opção ```create a launch.json file.``` e coloque  código abaixo no arquivo criado:
+
+```
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "node",
+            "request": "attach",
+            "protocol": "inspector",
+            "restart": true,
+            "name": "Debug",
+            "skipFiles": [
+                "<node_internals>/**"
+            ],
+            "outFiles": [
+                "${workspaceFolder}/**/*.js"
+            ]
+        }
+    ]
+}
+```
