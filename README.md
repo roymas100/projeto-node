@@ -15,6 +15,7 @@ Tabela de conteúdos
       * [Configurando ESLint](#ancora3.2)
       * [Configurando Prettier](#ancora3.3)
   * [VSCode Debug Configuration](#ancora4)
+  * [Descrevendo arquitetura do software](#ancora5)
 <!--te-->
 
 <a id="ancora1"></a>
@@ -48,12 +49,12 @@ yarn tsc --init
 ```
 
 <a id="ancora2.1Obs"></a>
-###### Obs.: Quando tiver alguma dependencia que não está sendo lida, tente " @type/xxxx -D ".
+###### Obs.: Quando tiver alguma dependencia que não está sendo lida, tente " @types/xxxx -D ".
 
 <a id="ancora2.2"></a>
 ## Passo 2 - Configurar 'tsconfig.json'
 
-#### Em 'tsconfig.json', descomente as duas linhas 'outDir' e 'rootDir', e deixe como está abaixo:
+#### Em ```tsconfig.json```, descomente as duas linhas ```outDir``` e ```rootDir```, e deixe como está abaixo:
 
 ```
     "outDir": "./dist",
@@ -69,7 +70,7 @@ yarn tsc --init
 yarn add ts-node-dev -D
 ```
 
-### Vá ao "package.json" e adicione os scripts conforme abaixo:
+### Vá ao ```package.json``` e adicione os scripts conforme abaixo:
 
 ```
 {
@@ -99,7 +100,7 @@ Tutorial do Notion - Imagens também de sua autoria.
 
 ![alt text](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/633a1f68-af6a-4eaf-849e-66f6cc1acae7/editorConfig.gif?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAT73L2G45O3KS52Y5%2F20201218%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20201218T120758Z&X-Amz-Expires=86400&X-Amz-Signature=b547492f1347bf173328cd2a51c299d7ce9e297475648a398a31e9871d1ab524&X-Amz-SignedHeaders=host)
 
-#### Modifique o arquivo gerado, 'editorconfig', como está abaixo:
+#### Modifique o arquivo gerado, ```editorconfig```, como está abaixo:
 
 ```bash
 root = true
@@ -144,7 +145,7 @@ yarn eslint --init
 yarn add @typescript-eslint/eslint-plugin@latest eslint-config-airbnb-base@latest eslint-plugin-import@^2.21.2 @typescript-eslint/parser@latest -D
 ```
 
-#### Crie um arquivo na raiz do projeto ```.eslintignore````
+#### Crie um arquivo na raiz do projeto ```.eslintignore```
 
 ```bash
 /*.js
@@ -310,3 +311,8 @@ module.exports = {
     ]
 }
 ```
+
+<a id="ancora5"></a>
+# Descrevendo arquitetura do software
+
+* <b>[Repositórios, services & patterns](https://www.notion.so/Repository-service-e-patterns-82419cceb11c4c4fbbc055ade7fb1ac5)</b>.
