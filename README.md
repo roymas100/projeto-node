@@ -16,6 +16,8 @@ Tabela de conteúdos
       * [Configurando Prettier](#ancora3.3)
   * [VSCode Debug Configuration](#ancora4)
   * [Descrevendo arquitetura do software](#ancora5)
+  * [Configurando Docker](#ancora6)
+  * [Configurando TypeORM](#ancora7)
 <!--te-->
 
 <a id="ancora1"></a>
@@ -316,3 +318,19 @@ module.exports = {
 # Descrevendo arquitetura do software
 
 * <b>[Repositórios, services & patterns](https://www.notion.so/Repository-service-e-patterns-82419cceb11c4c4fbbc055ade7fb1ac5)</b>.
+
+
+<a id="ancora6"></a>
+# Configurando Docker
+
+* [Configurando docker](https://github.com/roymas100/Docker-Configuration)
+
+#### Instale a dependencia do postgres
+```
+yarn add pg
+```
+
+<a id="ancora7"></a>
+# Configurando TypeORM
+
+* [TypeORM-Configuration](https://github.com/roymas100/TypeORM-Configuration)
